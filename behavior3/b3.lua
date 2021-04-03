@@ -4,9 +4,31 @@ local const = require("behavior3.const")
 -- Class Declaration
 local B3 = class("B3")
 
-B3.Succeeder = require("behavior3.actions.succeeder")
+-- Core
 B3.BlackBoard = require("behavior3.core.blackboard")
 B3.Tick = require("behavior3.core.tick")
+
+-- Actions
+B3.Error = require("behavior3.actions.error")
+B3.Failer = require("behavior3.actions.failer")
+B3.Runner = require("behavior3.actions.runner")
+B3.Succeeder = require("behavior3.actions.succeeder")
+B3.Wait = require("behavior3.actions.wait")
+
+--Composites
+B3.Sequence = require("behavior3.composites.sequence")
+B3.Selector = require("behavior3.composites.selector")
+B3.MemSequence = require("behavior3.composites.mem_sequence")
+B3.MemSelector = require("behavior3.composites.mem_selector")
+B3.WeightSelector = require("behavior3.composites.weight_selector")
+
+--Decorators
+B3.Inverter = require("behavior3.decorators.inverter")
+B3.Limiter = require("behavior3.decorators.limiter")
+B3.MaxTime = require("behavior3.decorators.max_time")
+B3.Repeater = require("behavior3.decorators.repeater")
+B3.RepeatUntilFailure = require("behavior3.decorators.repeat_until_failure")
+B3.RepeatUntilSuccess = require("behavior3.decorators.repeat_until_success")
 
 ---@param data table Behavior Tree data
 ---@param customNodeList table Table contain custom node classes
@@ -20,6 +42,8 @@ function B3:initialize(data, customNodeList)
     self:load(data, customNodeList)
 end
 
+---@param data table Behavior Tree data table
+---@param nodeList table Table contain custom node classes
 function B3:load(data, nodeList)
     if type(data) ~= "table" then
         return false

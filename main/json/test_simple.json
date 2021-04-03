@@ -1,30 +1,30 @@
 {
-    "version": "0.3.1",
-    "scope": "tree",
-    "id": "21bdddc9-e563-448c-8051-59b4c8c46737",
-    "title": "A behavior tree",
-    "description": "",
-    "root": "64d9a2a7-f59a-42f1-8a44-1241f7b25428",
-    "properties": {},
-    "nodes": {
-      "64d9a2a7-f59a-42f1-8a44-1241f7b25428": {
-        "id": "64d9a2a7-f59a-42f1-8a44-1241f7b25428",
-        "name": "Succeeder",
-        "title": "Succeeder",
-        "description": "",
-        "properties": {},
-        "display": {
-          "x": -36,
-          "y": -180
-        }
+  "version": "0.3.1",
+  "scope": "tree",
+  "id": "6bb95abe-fad4-4a28-a2e6-027a5a0c8e0c",
+  "title": "A behavior tree",
+  "description": "",
+  "root": "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9",
+  "properties": {},
+  "nodes": {
+    "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9": {
+      "id": "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9",
+      "name": "Failer",
+      "title": "Failer",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -60,
+        "y": -168
       }
-    },
-    "display": {
-      "camera_x": 882,
-      "camera_y": 491.5,
-      "camera_z": 1,
-      "x": -36,
-      "y": -300
-    },
-    "custom_nodes": []
-  }
+    }
+  },
+  "display": {
+    "camera_x": 882,
+    "camera_y": 491.5,
+    "camera_z": 1,
+    "x": -48,
+    "y": -336
+  },
+  "custom_nodes": []
+}

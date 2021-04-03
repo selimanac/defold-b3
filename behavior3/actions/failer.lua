@@ -5,6 +5,7 @@ local const = require("behavior3.const")
 local Failer = class("Failer", Action)
 
 function Failer:onTick(tick)
+    print("Fail ")
     return const.FAILURE
 end
 

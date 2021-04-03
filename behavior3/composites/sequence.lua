@@ -5,7 +5,7 @@ local const = require("behavior3.const")
 local Sequence = class("Sequence", Composite)
 
 function Sequence:onTick(tick)
-    print('In seq')
+    print('In seqsss', #self.children)
     for i = 1, #self.children do
        
         local status = self.children[i]:execute(tick)

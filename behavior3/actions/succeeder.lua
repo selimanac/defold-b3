@@ -6,6 +6,7 @@ local Succeeder = class("Succeeder", Action)
 
 
 function Succeeder:onTick(tick)
+  
     return const.SUCCESS
 end
 

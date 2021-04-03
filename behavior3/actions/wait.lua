@@ -10,15 +10,19 @@ end
 
 function Wait:onOpen(tick)
     local startTime = os.time()
+
     tick.agent:set("startTime", startTime, tick.tree.id, self.id)
 end
 
 function Wait:onTick(tick)
     local currTime = os.time()
+
     local startTime = tick.agent:get("startTime", tick.tree.id, self.id)
+
     if currTime - startTime > self.endTime then
         return const.SUCCESS
     end
+
     return const.RUNNING
 end
 return Wait

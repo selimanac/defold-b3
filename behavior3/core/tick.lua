@@ -10,32 +10,39 @@ function Tick:initialize()
     self.nodeCount = 0
 end
 
+local function debug(self, node, fnc)
+    if self.debug then
+        print("-", fnc, ":", node.title , node.name, node.category)
+    end
+end
+
 ---@field protected enterNode function
 function Tick:enterNode(node)
     self.nodeCount = self.nodeCount + 1
     table.insert(self.openNodes, node)
-    --TODO:call debug here
+    debug(self, node, "enterNode")
 end
 
 ---@field protected openNode function
 function Tick:openNode(node)
-    --TODO:call debug here
+    debug(self, node, "openNode")
 end
 
 ---@field protected tickNode function
 function Tick:tickNode(node, result)
-    --TODO:call debug here
+    debug(self, node, "tickNode")
 end
 
 ---@field protected closeNode function
 function Tick:closeNode(node)
     --remove last node
     table.remove(self.openNodes, #self.openNodes)
-    --TODO:call debug here
+
+    debug(self, node, "closeNode")
 end
 
 ---@field protected exitNode function
 function Tick:exitNode(node)
-    --TODO:call debug here
+    debug(self, node, "exitNode")
 end
 return Tick

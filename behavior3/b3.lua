@@ -32,12 +32,14 @@ B3.RepeatUntilSuccess = require("behavior3.decorators.repeat_until_success")
 
 ---@param data table Behavior Tree data
 ---@param customNodeList table Table contain custom node classes
-function B3:initialize(data, customNodeList)
+---@param debug boolean Tick debug print
+function B3:initialize(data, customNodeList, debug)
     self.title = "The behavior tree"
     self.description = "Default description"
     self.properties = {}
     self.root = nil
-    self.debug = nil
+
+    self.debug = debug or nil
 
     self:load(data, customNodeList)
 end
@@ -64,6 +66,10 @@ function B3:load(data, nodeList)
         node = Cls:new(nodeData)
         nodes[id] = node
 
+    end
+
+    for id, nodeData in pairs(data.nodes) do
+        node = nodes[id]
         if node.category == const.COMPOSITE and nodeData.children then
             for i = 1, #nodeData.children do
                 local cid = nodeData.children[i]
@@ -74,6 +80,7 @@ function B3:load(data, nodeList)
             assert(node.child, "not have a child")
         end
     end
+
     self.root = nodes[data.root]
 end
 
@@ -143,7 +150,7 @@ function B3:tick(tick)
     assert(tick.agent, "agent is important for tick method")
     assert(tick.worldBlackboard, "worldBlackboard is important for tick method")
 
-    tick.debuge = self.debug
+    tick.debug = self.debug
     tick.tree = self
 
     --TICK NODE

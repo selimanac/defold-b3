@@ -4,18 +4,142 @@
   "id": "6bb95abe-fad4-4a28-a2e6-027a5a0c8e0c",
   "title": "A behavior tree",
   "description": "",
-  "root": "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9",
+  "root": "383809b4-6ad1-4993-8809-35ea498987fb",
   "properties": {},
   "nodes": {
-    "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9": {
-      "id": "bdf9b48d-3a38-4b2b-a9fe-b62a34490ce9",
+    "893ac733-2bc2-43e0-8dd3-bc4fe28e8977": {
+      "id": "893ac733-2bc2-43e0-8dd3-bc4fe28e8977",
+      "name": "Sequence",
+      "title": "Sequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -288,
+        "y": -180
+      },
+      "children": [
+        "a82fa146-686f-4f39-b6c6-31c27e949a7a",
+        "bf5ceffc-9e17-4d12-b29c-264eac0350de",
+        "bfff1d1a-9756-43f0-80a8-383fa8a55554"
+      ]
+    },
+    "bfff1d1a-9756-43f0-80a8-383fa8a55554": {
+      "id": "bfff1d1a-9756-43f0-80a8-383fa8a55554",
+      "name": "Succeeder",
+      "title": "Succeeder 2",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 36,
+        "y": 36
+      }
+    },
+    "a82fa146-686f-4f39-b6c6-31c27e949a7a": {
+      "id": "a82fa146-686f-4f39-b6c6-31c27e949a7a",
+      "name": "Succeeder",
+      "title": "Succeeder 1",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -348,
+        "y": 24
+      }
+    },
+    "bf5ceffc-9e17-4d12-b29c-264eac0350de": {
+      "id": "bf5ceffc-9e17-4d12-b29c-264eac0350de",
+      "name": "Failer",
+      "title": "Failer 1",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -144,
+        "y": 24
+      }
+    },
+    "453d633a-bc4b-44aa-9edb-2d3c9b06875d": {
+      "id": "453d633a-bc4b-44aa-9edb-2d3c9b06875d",
+      "name": "MemSequence",
+      "title": "MemSequence",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -24,
+        "y": -228
+      },
+      "children": [
+        "ac585e8f-a04a-4396-957f-5d10294b8d5f",
+        "bc0ce578-2a28-47e4-b526-dcc400cbadef",
+        "0e708511-2049-41ff-8eae-3a789cf00275"
+      ]
+    },
+    "ac585e8f-a04a-4396-957f-5d10294b8d5f": {
+      "id": "ac585e8f-a04a-4396-957f-5d10294b8d5f",
+      "name": "Succeeder",
+      "title": "Succeeder 1",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -132,
+        "y": -132
+      }
+    },
+    "0e708511-2049-41ff-8eae-3a789cf00275": {
+      "id": "0e708511-2049-41ff-8eae-3a789cf00275",
+      "name": "Succeeder",
+      "title": "Succeeder 2",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 492,
+        "y": -108
+      }
+    },
+    "bc0ce578-2a28-47e4-b526-dcc400cbadef": {
+      "id": "bc0ce578-2a28-47e4-b526-dcc400cbadef",
+      "name": "Runner",
+      "title": "Runner",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": 132,
+        "y": -120
+      }
+    },
+    "383809b4-6ad1-4993-8809-35ea498987fb": {
+      "id": "383809b4-6ad1-4993-8809-35ea498987fb",
+      "name": "Selector",
+      "title": "Selector",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -468,
+        "y": -216
+      },
+      "children": [
+        "1c222f14-ceec-4652-8823-8324cdfb96dc",
+        "53a63a51-e78f-4c89-8cc3-21102c044a4c"
+      ]
+    },
+    "53a63a51-e78f-4c89-8cc3-21102c044a4c": {
+      "id": "53a63a51-e78f-4c89-8cc3-21102c044a4c",
+      "name": "Succeeder",
+      "title": "Succeeder",
+      "description": "",
+      "properties": {},
+      "display": {
+        "x": -372,
+        "y": -96
+      }
+    },
+    "1c222f14-ceec-4652-8823-8324cdfb96dc": {
+      "id": "1c222f14-ceec-4652-8823-8324cdfb96dc",
       "name": "Failer",
       "title": "Failer",
       "description": "",
       "properties": {},
       "display": {
-        "x": -60,
-        "y": -168
+        "x": -576,
+        "y": -84
       }
     }
   },

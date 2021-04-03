@@ -1,0 +1,23 @@
+local b3 = require("behavior3.b3")
+
+function init(self)
+    local data, error = sys.load_resource("/main/json/test_simple.json")
+    local data_table = {}
+    if data then
+        data_table = json.decode(data)
+    else
+        print(error)
+    end
+
+    local behaviortree = b3:new(data_table)
+    local dump = behaviortree:dump()
+    local worldBlackboard = b3.BlackBoard:new()
+    local agent = b3.BlackBoard:new()
+    local tick = b3.Tick:new()
+
+    tick.agent = agent
+    tick.worldBlackboard = worldBlackboard
+
+    local state = behaviortree:tick(tick)
+    pprint(state)
+end

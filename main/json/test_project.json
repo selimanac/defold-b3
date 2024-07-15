@@ -1,175 +1,172 @@
 {
   "version": "0.3.1",
   "scope": "project",
-  "selectedTree": "b159c19a-5198-4918-a7c9-9e5eaf630531",
+  "selectedTree": "632db408-56f1-446c-9df9-3d5e87754d9e",
   "trees": [
     {
       "version": "0.3.1",
       "scope": "tree",
-      "id": "b159c19a-5198-4918-a7c9-9e5eaf630531",
-      "title": "idle",
+      "id": "632db408-56f1-446c-9df9-3d5e87754d9e",
+      "title": "move",
       "description": "",
-      "root": "b6a3c5d6-6ded-47b6-be76-089c68598b13",
+      "root": "34672d05-7612-4272-8b76-ef693e44d9b7",
       "properties": {},
       "nodes": {
-        "b6a3c5d6-6ded-47b6-be76-089c68598b13": {
-          "id": "b6a3c5d6-6ded-47b6-be76-089c68598b13",
-          "name": "Priority",
-          "title": "Decide Action",
+        "de4f0007-e31d-448c-9e4e-53810055a613": {
+          "id": "de4f0007-e31d-448c-9e4e-53810055a613",
+          "name": "Sequence",
+          "title": "Move Sequence",
           "description": "",
           "properties": {},
           "display": {
-            "x": -48,
-            "y": -276
+            "x": -312,
+            "y": 84
           },
           "children": [
-            "36ff10f0-59d4-4525-81a7-ea275486a76f",
-            "74c122e9-abbe-4111-8b55-be1ec098f870",
-            "0ace2b30-5ac0-4e3e-8012-b5365ceb7eb4"
+            "ff0468f3-fcd9-4d2b-bd26-eed882b778b6",
+            "699ff04f-6c48-4683-8824-6c6bbfa19735"
           ]
         },
-        "36ff10f0-59d4-4525-81a7-ea275486a76f": {
-          "id": "36ff10f0-59d4-4525-81a7-ea275486a76f",
-          "name": "is_dead",
-          "title": "Is Dead?",
+        "699ff04f-6c48-4683-8824-6c6bbfa19735": {
+          "id": "699ff04f-6c48-4683-8824-6c6bbfa19735",
+          "name": "Succeeder",
+          "title": "Succeeder",
           "description": "",
-          "properties": {
-            "isDead": "true"
-          },
+          "properties": {},
           "display": {
-            "x": -324,
-            "y": -156
+            "x": -216,
+            "y": 216
           }
         },
-        "74c122e9-abbe-4111-8b55-be1ec098f870": {
-          "id": "74c122e9-abbe-4111-8b55-be1ec098f870",
-          "name": "Sequence",
-          "title": "Go Home Check",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": -60,
-            "y": -156
+        "ff0468f3-fcd9-4d2b-bd26-eed882b778b6": {
+          "id": "ff0468f3-fcd9-4d2b-bd26-eed882b778b6",
+          "name": "test_action",
+          "title": "Test Action",
+          "description": "testing",
+          "properties": {
+            "test_value": 1
           },
-          "children": [
-            "758d6e32-2350-4ef4-9e06-d827bebea49c",
-            "91d97646-1c49-4b23-bdbf-a8fd536acf28",
-            "ddc3854e-e840-4a93-82c9-e99ffa3fb3ac"
-          ]
+          "display": {
+            "x": -420,
+            "y": 216
+          }
         },
-        "758d6e32-2350-4ef4-9e06-d827bebea49c": {
-          "id": "758d6e32-2350-4ef4-9e06-d827bebea49c",
+        "34672d05-7612-4272-8b76-ef693e44d9b7": {
+          "id": "34672d05-7612-4272-8b76-ef693e44d9b7",
           "name": "Priority",
-          "title": "Should Go Home?",
+          "title": "Move Priority",
           "description": "",
           "properties": {},
           "display": {
-            "x": -180,
+            "x": -156,
             "y": -48
           },
           "children": [
-            "43b1cdf0-61df-40b4-8ebf-23a69d9cfec2",
-            "a643218a-d344-4890-8ddf-f32e0180911c"
+            "de4f0007-e31d-448c-9e4e-53810055a613",
+            "4722cc57-f396-45f2-91dd-9b302c335fe5"
           ]
         },
-        "91d97646-1c49-4b23-bdbf-a8fd536acf28": {
-          "id": "91d97646-1c49-4b23-bdbf-a8fd536acf28",
-          "name": "find_friendly_planet",
-          "title": "Find Friendly Planet",
+        "4722cc57-f396-45f2-91dd-9b302c335fe5": {
+          "id": "4722cc57-f396-45f2-91dd-9b302c335fe5",
+          "name": "Failer",
+          "title": "Moce Failer",
           "description": "",
           "properties": {},
           "display": {
             "x": 0,
-            "y": -36
-          }
-        },
-        "ddc3854e-e840-4a93-82c9-e99ffa3fb3ac": {
-          "id": "ddc3854e-e840-4a93-82c9-e99ffa3fb3ac",
-          "name": "go_to",
-          "title": "Go To",
-          "description": "",
-          "properties": {
-            "tree_id": "move",
-            "go": "home"
-          },
-          "display": {
-            "x": 252,
-            "y": -36
-          }
-        },
-        "43b1cdf0-61df-40b4-8ebf-23a69d9cfec2": {
-          "id": "43b1cdf0-61df-40b4-8ebf-23a69d9cfec2",
-          "name": "low_resource",
-          "title": "Low Resource",
-          "description": "",
-          "properties": {
-            "type": "health"
-          },
-          "display": {
-            "x": -300,
-            "y": 84
-          }
-        },
-        "a643218a-d344-4890-8ddf-f32e0180911c": {
-          "id": "a643218a-d344-4890-8ddf-f32e0180911c",
-          "name": "low_resource",
-          "title": "Low Resource",
-          "description": "",
-          "properties": {
-            "type": "ammo"
-          },
-          "display": {
-            "x": -96,
-            "y": 84
-          }
-        },
-        "0ace2b30-5ac0-4e3e-8012-b5365ceb7eb4": {
-          "id": "0ace2b30-5ac0-4e3e-8012-b5365ceb7eb4",
-          "name": "Sequence",
-          "title": "Find Target Check",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": 600,
-            "y": -168
-          },
-          "children": [
-            "ba4d8604-7445-4dc2-8cc1-3b7720f4a0ad",
-            "bc127fd3-e3ee-4151-8490-126345b665b3"
-          ]
-        },
-        "ba4d8604-7445-4dc2-8cc1-3b7720f4a0ad": {
-          "id": "ba4d8604-7445-4dc2-8cc1-3b7720f4a0ad",
-          "name": "find_target",
-          "title": "Find Target",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": 492,
-            "y": -72
-          }
-        },
-        "bc127fd3-e3ee-4151-8490-126345b665b3": {
-          "id": "bc127fd3-e3ee-4151-8490-126345b665b3",
-          "name": "go_to",
-          "title": "Go To",
-          "description": "",
-          "properties": {
-            "tree_id": "move",
-            "go": "target"
-          },
-          "display": {
-            "x": 720,
-            "y": -36
+            "y": 72
           }
         }
       },
       "display": {
-        "camera_x": 688.5,
-        "camera_y": 491.5,
+        "camera_x": 921,
+        "camera_y": 397.5,
         "camera_z": 1,
-        "x": -48,
-        "y": -384
+        "x": -156,
+        "y": -168
+      }
+    },
+    {
+      "version": "0.3.1",
+      "scope": "tree",
+      "id": "4d3f54f4-20ad-4d1f-81aa-d23076f745c1",
+      "title": "idle",
+      "description": "",
+      "root": "98992193-5be3-4613-8db8-d3b892b39bd6",
+      "properties": {},
+      "nodes": {
+        "11e4ce79-f4ea-4f2f-9a66-c6f789db1341": {
+          "id": "11e4ce79-f4ea-4f2f-9a66-c6f789db1341",
+          "name": "Sequence",
+          "title": "Idle Sequence",
+          "description": "",
+          "properties": {},
+          "display": {
+            "x": -264,
+            "y": 132
+          },
+          "children": [
+            "1cb61eec-1857-422e-803c-6a606169f36a",
+            "a771ce19-2a49-42c9-8b05-579752d09df1"
+          ]
+        },
+        "a771ce19-2a49-42c9-8b05-579752d09df1": {
+          "id": "a771ce19-2a49-42c9-8b05-579752d09df1",
+          "name": "Succeeder",
+          "title": "Succeeder",
+          "description": "",
+          "properties": {},
+          "display": {
+            "x": -168,
+            "y": 264
+          }
+        },
+        "1cb61eec-1857-422e-803c-6a606169f36a": {
+          "id": "1cb61eec-1857-422e-803c-6a606169f36a",
+          "name": "test_action",
+          "title": "Test Action",
+          "description": "testing",
+          "properties": {
+            "test_value": 1
+          },
+          "display": {
+            "x": -372,
+            "y": 264
+          }
+        },
+        "98992193-5be3-4613-8db8-d3b892b39bd6": {
+          "id": "98992193-5be3-4613-8db8-d3b892b39bd6",
+          "name": "Priority",
+          "title": "Idle Priority",
+          "description": "",
+          "properties": {},
+          "display": {
+            "x": -108,
+            "y": 0
+          },
+          "children": [
+            "11e4ce79-f4ea-4f2f-9a66-c6f789db1341",
+            "0680ade7-86af-4f05-9683-4b4015eeda6f"
+          ]
+        },
+        "0680ade7-86af-4f05-9683-4b4015eeda6f": {
+          "id": "0680ade7-86af-4f05-9683-4b4015eeda6f",
+          "name": "Failer",
+          "title": "IDle Failer",
+          "description": "",
+          "properties": {},
+          "display": {
+            "x": 48,
+            "y": 132
+          }
+        }
+      },
+      "display": {
+        "camera_x": 838.5,
+        "camera_y": 485,
+        "camera_z": 1,
+        "x": -156,
+        "y": -204
       }
     }
   ],
@@ -177,53 +174,12 @@
     {
       "version": "0.3.1",
       "scope": "node",
-      "name": "is_dead",
+      "name": "test_action",
       "category": "action",
-      "title": "Is Dead?",
-      "description": null,
+      "title": "Test Action",
+      "description": "testing",
       "properties": {
-        "isDead": "true"
-      }
-    },
-    {
-      "version": "0.3.1",
-      "scope": "node",
-      "name": "find_friendly_planet",
-      "category": "action",
-      "title": "Find Friendly Planet",
-      "description": null,
-      "properties": {}
-    },
-    {
-      "version": "0.3.1",
-      "scope": "node",
-      "name": "low_resource",
-      "category": "action",
-      "title": "Low Resource",
-      "description": null,
-      "properties": {
-        "type": "health"
-      }
-    },
-    {
-      "version": "0.3.1",
-      "scope": "node",
-      "name": "find_target",
-      "category": "action",
-      "title": "Find Target",
-      "description": null,
-      "properties": {}
-    },
-    {
-      "version": "0.3.1",
-      "scope": "node",
-      "name": "go_to",
-      "category": "action",
-      "title": "Go To",
-      "description": null,
-      "properties": {
-        "tree_id": "move",
-        "go": "home"
+        "test_value": 1
       }
     }
   ]

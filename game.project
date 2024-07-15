@@ -12,10 +12,10 @@ height = 640
 input_method = HiddenInputField
 
 [project]
-title = behavior3-defold
-dependencies = https://github.com/selimanac/defold-uuid4/archive/master.zip
+title = defold-b3
 custom_resources = main/json/
+dependencies#0 = https://github.com/selimanac/defold-uuid4/archive/master.zip
 
 [library]
-include_dirs = behavior3
+include_dirs = b3
 

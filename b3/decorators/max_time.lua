@@ -6,7 +6,7 @@ local MaxTime = class("MaxTime", Decorator)
 
 function MaxTime:onCreate(properties)
     assert(properties.maxTime, "maxTime parameter in MaxTime decorator is an obligatory parameter")
-    self.maxTime = params.maxTime
+    self.maxTime = properties.maxTime
 end
 
 function MaxTime:onOpen(tick)
@@ -21,12 +21,11 @@ function MaxTime:onTick(tick)
 
     local currTime = os.time()
     local startTime = tick.agent:get("startTime", tick.tree.id, self.id)
+    local status = self.child:execute(tick)
 
     if currTime - startTime > self.maxTime then
         return const.FAILURE
     end
-
-    local status = self.child:execute(tick)
 
     return status
 end

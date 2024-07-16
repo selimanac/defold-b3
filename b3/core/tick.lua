@@ -5,7 +5,7 @@ function Tick:initialize()
     self.tree = nil
     self.debug = nil
     self.agent = nil
-    self.worldBlackboard = nil
+    self.blackboard = nil
     self.openNodes = {}
     self.nodeCount = 0
 end

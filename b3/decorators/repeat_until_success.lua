@@ -15,7 +15,7 @@ end
 
 function RepeatUntilSuccess:onTick(tick)
     if not self.child then
-        return status.ERROR
+        return const.ERROR
     end
 
     local i = tick.agent:get("i", tick.tree.id, self.id)

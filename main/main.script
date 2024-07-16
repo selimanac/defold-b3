@@ -6,47 +6,23 @@ local behaviortree
 local tick
 local state = 0
 function init(self)
-    local data, error = sys.load_resource("/main/json/test_project.json")
+    local data, error = sys.load_resource("/main/json/test_all_project.json")
     local data_table = {}
     if data then
         data_table = json.decode(data)
     end
 
-    local customNodeList = {
-        test_action = require("main.test_action")
-    }
-
-    local project_data_table = b3:parse_project(data_table, customNodeList)
-    pprint(project_data_table['idle'])
-
-    local move_b3_data_table = data_table['trees'][1]
-    local idle_b3_data_table = data_table['trees'][2]
-
-
-    --  pprint(move_b3_table)
-    local move_b3_data = b3:parse_tree(move_b3_data_table, customNodeList)
-    local idle_b3_data = b3:parse_tree(idle_b3_data_table, customNodeList)
-
+    local project_data_table = b3:parse_project(data_table)
 
     local worldBlackboard = b3.BlackBoard:new()
     local agentBlackboard = b3.BlackBoard:new()
 
-    worldBlackboard:set('test_blackboard_value', 999)
-
     tick = b3.Tick:new()
     tick.agent = agentBlackboard
-    tick.worldBlackboard = worldBlackboard
+    tick.blackboard = worldBlackboard
 
-    --[[
-    move_b3 = b3:new(move_b3_data_table, customNodeList, true)
-    idle_b3 = b3:new(idle_b3_data_table, customNodeList, true)
 
-    state = move_b3:tick(tick)
-    state = idle_b3:tick(tick)
-
-]]
-
-    behaviortree = b3:new(project_data_table['move'], customNodeList, true)
+    behaviortree = b3:new(project_data_table['root'], nil, true)
     local dump = behaviortree:dump()
 
     state = behaviortree:tick(tick)
@@ -54,28 +30,12 @@ function init(self)
     if state == const.SUCCESS then
         print('SUCCESS')
     end
+end
 
-
-
-    pprint(worldBlackboard:get('test_blackboard_value'))
-
-    --    behaviortree = b3:new(idle_b3_data_table, customNodeList, true)
-    behaviortree:set_tree(project_data_table['idle'])
+function update(self, dt)
     state = behaviortree:tick(tick)
-
     print(state)
     if state == const.SUCCESS then
         print('SUCCESS')
     end
-
-    pprint(worldBlackboard:get('test_blackboard_value'))
-end
-
-function update(self, dt)
-    --[[  if state ~= 1 then
-        state = behaviortree:tick(tick)
-    end
-    if state == 1 then
-        print("state: ", state)
-    end]]
 end

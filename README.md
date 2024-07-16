@@ -1,3 +1,5 @@
+![defold-b3](/.github/b3.png?raw=true)
+
 This is a Behavior Tree Runtime library for the Defold Engine based on old [Behavior3](https://github.com/behavior3) framework.
 
 ## Installation
@@ -8,7 +10,7 @@ Open your `game.project` file, select  `Project ` and add a  `Dependencies ` fie
 >https://github.com/selimanac/defold-astar/archive/master.zip  
 >https://github.com/selimanac/defold-uuid4/archive/master.zip
 
-## Editor
+## Behavior Tree Editor
 
 https://selimanac.github.io/defold-b3-editor
 
@@ -54,7 +56,7 @@ Parse json file exported from [b3 Editor](https://selimanac.github.io/defold-b3-
 
 **RETURNS**
 
-* ```project_data_table``` (table) Multiple tree table paired by **tree names** set from Editor.
+* ```project_data_table``` (table) Multiple tree tables paired by **tree names** set from Editor.
 
 **EXAMPLE**
 
@@ -176,7 +178,7 @@ Get key-value pair from Blackboard instance.
 
 ## b3.Tick:new()
 
-Create and get a new Tick instance. You must set the `tick.agent` and `tick.worldBlackboard`variables. 
+Create and get a new Tick instance. You must set the `tick.agent` and `tick.blackboard`variables. 
 
 
 **RETURNS**
@@ -193,7 +195,7 @@ Create and get a new Tick instance. You must set the `tick.agent` and `tick.worl
 
 ## tick.agent
 
-Tick agent blackboard. This is for internal use. You must set this variable.
+Tick agent blackboard. This is for **internal use**. You must set this variable.
 
 
 **EXAMPLE**
@@ -206,18 +208,18 @@ Tick agent blackboard. This is for internal use. You must set this variable.
 
 ```
 
-## tick.worldBlackboard
+## tick.blackboard
 
-Tick world(generic) blackboard. This for any kind of data passing throuh tree. You must set this variable.
+Tick generic blackboard. This for any kind of data passing throuh tree. You must set this variable.
 
 
 **EXAMPLE**
 
 ```lua
 
-    local worldBlackboard = b3.BlackBoard:new()
+    local blackboard = b3.BlackBoard:new()
     local tick = b3.Tick:new()
-    tick.worldBlackboard = worldBlackboard
+    tick.blackboard = blackboard
 
 ```
 
@@ -324,7 +326,7 @@ Single behavior tree tick.
 
    local const = require("b3.const")
 
-   local state = behaviortree:tick(tick)
+   local state = behaviortree_instance:tick(tick)
    if state == const.SUCCESS then
         print('SUCCESS')
     end
@@ -335,7 +337,7 @@ Single behavior tree tick.
 
 # Node Lifecycle
 
-These functions can be used to create custom nodes by extending the relevant class. The available classes are located in the b3.core folder.
+These functions can be used to create custom nodes by extending the relevant class. The available classes are located in the [`b3.core`](https://github.com/selimanac/defold-b3/tree/master/b3/core) folder.
 
 ## BaseNode:onCreate(nodeData)
 

@@ -17,10 +17,10 @@ B3.Wait = require("b3.actions.wait")
 
 --Composites
 B3.Sequence = require("b3.composites.sequence")
-B3.Priority = require("b3.composites.selector")
+B3.Selector = require("b3.composites.selector")
 B3.MemSequence = require("b3.composites.mem_sequence")
-B3.MemPriority = require("b3.composites.mem_selector")
-B3.WeightPriority = require("b3.composites.weight_selector") -- ??
+B3.MemSelector = require("b3.composites.mem_selector")
+B3.WeightSelector = require("b3.composites.weight_selector") -- ??
 
 --Decorators
 B3.Repeater = require("b3.decorators.repeater")
@@ -89,7 +89,6 @@ local function tree_parser(self, data, nodeList)
         nodes['data_id'] = data_id
         nodes['title'] = title
         nodes['description'] = description
-        print('NODEID:', nodes['data_id'])
     end
 
     return nodes[data.root]
@@ -186,7 +185,7 @@ end
 function B3:tick(tick)
     assert(tick, "tick object is important for tick method")
     assert(tick.agent, "agent is important for tick method")
-    assert(tick.worldBlackboard, "worldBlackboard is important for tick method")
+    assert(tick.blackboard, "worldBlackboard is important for tick method")
 
     tick.debug = self.debug
     tick.tree = self

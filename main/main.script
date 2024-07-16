@@ -6,23 +6,27 @@ local behaviortree
 local tick
 local state = 0
 function init(self)
-    local data, error = sys.load_resource("/main/json/test_all_project.json")
+    local data, error = sys.load_resource("/main/json/test_project.json")
     local data_table = {}
     if data then
         data_table = json.decode(data)
     end
 
-    local project_data_table = b3:parse_project(data_table)
+    local customNodeList = {
+        test_action = require("main.test_action")
+    }
 
-    local worldBlackboard = b3.BlackBoard:new()
+    local project_data_table = b3:parse_project(data_table, customNodeList)
+
+    local blackboard = b3.BlackBoard:new()
     local agentBlackboard = b3.BlackBoard:new()
 
     tick = b3.Tick:new()
     tick.agent = agentBlackboard
-    tick.blackboard = worldBlackboard
+    tick.blackboard = blackboard
 
 
-    behaviortree = b3:new(project_data_table['root'], nil, true)
+    behaviortree = b3:new(project_data_table['root'], customNodeList, true)
     local dump = behaviortree:dump()
 
     state = behaviortree:tick(tick)

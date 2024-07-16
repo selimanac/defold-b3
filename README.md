@@ -7,7 +7,7 @@ This is a Behavior Tree Runtime library for the Defold Engine based on old [Beha
 You can use this library in your own project by adding this project as a [Defold library dependency](https://defold.com/manuals/libraries/#setting-up-library-dependencies).  
 Open your `game.project` file, select  `Project ` and add a  `Dependencies` field:
 
->https://github.com/selimanac/defold-b3/archive/refs/heads/master.zip 
+>https://github.com/selimanac/defold-b3/archive/refs/heads/master.zip   
 >https://github.com/selimanac/defold-uuid4/archive/master.zip
 
 ## Behavior Tree Editor

@@ -5,7 +5,7 @@ This is a Behavior Tree Runtime library for the Defold Engine based on old [Beha
 ## Installation
 
 You can use this library in your own project by adding this project as a [Defold library dependency](https://defold.com/manuals/libraries/#setting-up-library-dependencies).  
-Open your `game.project` file, select  `Project ` and add a  `Dependencies ` fields:
+Open your `game.project` file, select  `Project ` and add a  `Dependencies` field:
 
 >https://github.com/selimanac/defold-astar/archive/master.zip  
 >https://github.com/selimanac/defold-uuid4/archive/master.zip
@@ -124,7 +124,7 @@ Create new Blackboard instance.
 
 ```lua
 
-    local worldBlackboard = b3.BlackBoard:new()
+    local blackboard = b3.BlackBoard:new()
 
 ```
 
@@ -143,8 +143,8 @@ Set a new key-value pair Blackboard instance.
 
 ```lua
 
-    local worldBlackboard = b3.BlackBoard:new()
-    worldBlackboard:set('blackboard_key', 'blackboard_value')
+    local blackboard = b3.BlackBoard:new()
+    blackboard:set('blackboard_key', 'blackboard_value')
 
 ```
 
@@ -166,9 +166,9 @@ Get key-value pair from Blackboard instance.
 
 ```lua
 
-    local worldBlackboard = b3.BlackBoard:new()
-    worldBlackboard:set('blackboard_key', 'blackboard_value')
-    print(worldBlackboard:get('blackboard_key'))
+    local blackboard = b3.BlackBoard:new()
+    blackboard:set('blackboard_key', 'blackboard_value')
+    print(blackboard:get('blackboard_key'))
 
 ```
 

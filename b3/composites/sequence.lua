@@ -7,6 +7,7 @@ local Sequence = class("Sequence", Composite)
 function Sequence:onTick(tick)
     for i = 1, #self.children do
         local status = self.children[i]:execute(tick)
+
         if status ~= const.SUCCESS then
             return status
         end

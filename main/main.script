@@ -1,10 +1,14 @@
 local b3 = require("b3.b3")
 local const = require("b3.const")
-
+local b3_action_chase_player = require("main.custom_nodes.b3_action_chase_player")
+local b3_action_roam_around = require("main.custom_nodes.b3_action_chase_player")
 
 local behaviortree
 local tick
 local state = 0
+
+local start = false
+
 function init(self)
     local data, error = sys.load_resource("/main/json/test_project.json")
     local data_table = {}
@@ -13,7 +17,8 @@ function init(self)
     end
 
     local customNodeList = {
-        test_action = require("main.test_action")
+        b3_action_chase_player = b3_action_chase_player,
+        b3_action_roam_around = b3_action_roam_around
     }
 
     local project_data_table = b3:parse_project(data_table, customNodeList)
@@ -25,21 +30,44 @@ function init(self)
     tick.agent = agentBlackboard
     tick.blackboard = blackboard
 
+    -- pprint(project_data_table['WaitTest'])
 
-    behaviortree = b3:new(project_data_table['root'], customNodeList, true)
+    behaviortree = b3:new(project_data_table['WaitTest'], customNodeList, false)
     local dump = behaviortree:dump()
+    self.endTime = 6
+    self.startTime = os.time()
+
+    --  msg.post('.', hash('init'))
 
     state = behaviortree:tick(tick)
-    print(state)
+
+    --   print('state:', state)
     if state == const.SUCCESS then
-        print('SUCCESS')
+        print('MAIN TICK SUCCESS')
+        print(self.currTime - self.startTime)
+        self.startTime = os.time()
     end
+
+    msg.post('.', hash('init'))
 end
 
 function update(self, dt)
-    state = behaviortree:tick(tick)
-    print(state)
-    if state == const.SUCCESS then
-        print('SUCCESS')
+    self.currTime = os.time()
+    if start then
+        if state == const.RUNNING then
+            state = behaviortree:tick(tick)
+            --   print('state:', state)
+            if state == const.SUCCESS then
+                print('MAIN TICK SUCCESS')
+                print(self.currTime - self.startTime)
+                self.startTime = os.time()
+            end
+        end
+    end
+end
+
+function on_message(self, message_id, message, sender)
+    if message_id == hash('init') then
+        start = true
     end
 end

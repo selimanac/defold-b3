@@ -6,7 +6,6 @@ local Wait = class("Wait", Action)
 
 function Wait:onCreate(properties)
     self.endTime = properties.milliseconds or 0
-    print('onCreate END TIME:', self.endTime)
 end
 
 function Wait:onOpen(tick)
@@ -18,7 +17,9 @@ function Wait:onTick(tick)
     local currTime = os.time()
     local startTime = tick.agent:get("startTime", tick.tree.id, self.id)
 
-    if currTime - startTime > self.endTime then
+    if currTime - startTime >= self.endTime then
+        print('self.id', self.id)
+        print('const.SUCCESS', currTime - startTime)
         return const.SUCCESS
     end
 

@@ -1,186 +1,209 @@
 {
-  "version": "0.3.1",
+  "version": "1.0.0",
   "scope": "project",
-  "selectedTree": "632db408-56f1-446c-9df9-3d5e87754d9e",
+  "selectedTree": "be857b6f-037f-4826-835e-331a82feb77c",
   "trees": [
     {
-      "version": "0.3.1",
+      "version": "1.0.0",
       "scope": "tree",
-      "id": "632db408-56f1-446c-9df9-3d5e87754d9e",
-      "title": "move",
-      "description": "",
-      "root": "34672d05-7612-4272-8b76-ef693e44d9b7",
+      "id": "8ca705f6-2550-4dfc-8915-356f71d21f60",
+      "title": "ChasePlayer",
+      "description": "The root of this tree.  The title of this node sets the title of the tree.",
+      "root": "5ce0f6be-14f0-434f-931d-d8361b6a780d",
       "properties": {},
       "nodes": {
-        "de4f0007-e31d-448c-9e4e-53810055a613": {
-          "id": "de4f0007-e31d-448c-9e4e-53810055a613",
-          "name": "Sequence",
-          "title": "Move Sequence",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": -312,
-            "y": 84
-          },
-          "children": [
-            "ff0468f3-fcd9-4d2b-bd26-eed882b778b6",
-            "699ff04f-6c48-4683-8824-6c6bbfa19735"
-          ]
-        },
-        "699ff04f-6c48-4683-8824-6c6bbfa19735": {
-          "id": "699ff04f-6c48-4683-8824-6c6bbfa19735",
-          "name": "Succeeder",
-          "title": "Succeeder",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": -216,
-            "y": 216
-          }
-        },
-        "ff0468f3-fcd9-4d2b-bd26-eed882b778b6": {
-          "id": "ff0468f3-fcd9-4d2b-bd26-eed882b778b6",
-          "name": "test_action",
-          "title": "Test Action",
-          "description": "testing",
-          "properties": {
-            "test_value": 1
-          },
-          "display": {
-            "x": -420,
-            "y": 216
-          }
-        },
-        "34672d05-7612-4272-8b76-ef693e44d9b7": {
-          "id": "34672d05-7612-4272-8b76-ef693e44d9b7",
-          "name": "Priority",
-          "title": "Move Priority",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": -156,
-            "y": -48
-          },
-          "children": [
-            "de4f0007-e31d-448c-9e4e-53810055a613",
-            "4722cc57-f396-45f2-91dd-9b302c335fe5"
-          ]
-        },
-        "4722cc57-f396-45f2-91dd-9b302c335fe5": {
-          "id": "4722cc57-f396-45f2-91dd-9b302c335fe5",
-          "name": "Failer",
-          "title": "Moce Failer",
-          "description": "",
+        "5ce0f6be-14f0-434f-931d-d8361b6a780d": {
+          "id": "5ce0f6be-14f0-434f-931d-d8361b6a780d",
+          "name": "Selector",
+          "title": "Selector",
+          "description": "Selector ticks its children sequentially until one of them returns `SUCCESS`, `RUNNING` or `ERROR`. If all children return the failure state, the priority also returns `FAILURE`.",
           "properties": {},
           "display": {
             "x": 0,
-            "y": 72
-          }
-        }
-      },
-      "display": {
-        "camera_x": 921,
-        "camera_y": 397.5,
-        "camera_z": 1,
-        "x": -156,
-        "y": -168
-      }
-    },
-    {
-      "version": "0.3.1",
-      "scope": "tree",
-      "id": "4d3f54f4-20ad-4d1f-81aa-d23076f745c1",
-      "title": "idle",
-      "description": "",
-      "root": "98992193-5be3-4613-8db8-d3b892b39bd6",
-      "properties": {},
-      "nodes": {
-        "11e4ce79-f4ea-4f2f-9a66-c6f789db1341": {
-          "id": "11e4ce79-f4ea-4f2f-9a66-c6f789db1341",
+            "y": 108
+          },
+          "children": [
+            "dc9c1784-2e61-4ea1-811d-08456a40dd29",
+            "5c7c02e2-9927-4351-82ea-af6977f3f784"
+          ]
+        },
+        "dc9c1784-2e61-4ea1-811d-08456a40dd29": {
+          "id": "dc9c1784-2e61-4ea1-811d-08456a40dd29",
           "name": "Sequence",
-          "title": "Idle Sequence",
+          "title": "Look Around",
+          "description": "The Sequence node ticks its children sequentially until one of them returns `FAILURE`, `RUNNING` or `ERROR`. If all children return the success state, the sequence also returns `SUCCESS`.",
+          "properties": {},
+          "display": {
+            "x": -156,
+            "y": 240
+          },
+          "children": [
+            "fb37dbb8-bfe5-4531-963d-0e1f3bb60a11",
+            "1770a033-ee2f-4b1c-a265-57b9589aae5b"
+          ]
+        },
+        "1770a033-ee2f-4b1c-a265-57b9589aae5b": {
+          "id": "1770a033-ee2f-4b1c-a265-57b9589aae5b",
+          "name": "Wait",
+          "title": "Wait <milliseconds>ms",
+          "description": "Wait a few seconds.",
+          "properties": {
+            "milliseconds": 2
+          },
+          "display": {
+            "x": -60,
+            "y": 372
+          }
+        },
+        "fb37dbb8-bfe5-4531-963d-0e1f3bb60a11": {
+          "id": "fb37dbb8-bfe5-4531-963d-0e1f3bb60a11",
+          "name": "b3_action_roam_around",
+          "title": "Roam Around",
           "description": "",
           "properties": {},
           "display": {
             "x": -264,
-            "y": 132
-          },
-          "children": [
-            "1cb61eec-1857-422e-803c-6a606169f36a",
-            "a771ce19-2a49-42c9-8b05-579752d09df1"
-          ]
-        },
-        "a771ce19-2a49-42c9-8b05-579752d09df1": {
-          "id": "a771ce19-2a49-42c9-8b05-579752d09df1",
-          "name": "Succeeder",
-          "title": "Succeeder",
-          "description": "",
-          "properties": {},
-          "display": {
-            "x": -168,
-            "y": 264
+            "y": 372
           }
         },
-        "1cb61eec-1857-422e-803c-6a606169f36a": {
-          "id": "1cb61eec-1857-422e-803c-6a606169f36a",
-          "name": "test_action",
-          "title": "Test Action",
-          "description": "testing",
-          "properties": {
-            "test_value": 1
-          },
-          "display": {
-            "x": -372,
-            "y": 264
-          }
-        },
-        "98992193-5be3-4613-8db8-d3b892b39bd6": {
-          "id": "98992193-5be3-4613-8db8-d3b892b39bd6",
-          "name": "Priority",
-          "title": "Idle Priority",
-          "description": "",
+        "5c7c02e2-9927-4351-82ea-af6977f3f784": {
+          "id": "5c7c02e2-9927-4351-82ea-af6977f3f784",
+          "name": "Sequence",
+          "title": "Chase Player",
+          "description": "The Sequence node ticks its children sequentially until one of them returns `FAILURE`, `RUNNING` or `ERROR`. If all children return the success state, the sequence also returns `SUCCESS`.",
           "properties": {},
           "display": {
-            "x": -108,
-            "y": 0
+            "x": 156,
+            "y": 240
           },
           "children": [
-            "11e4ce79-f4ea-4f2f-9a66-c6f789db1341",
-            "0680ade7-86af-4f05-9683-4b4015eeda6f"
+            "3bcbae7f-a2e5-40e9-94fa-b61f250585e6"
           ]
         },
-        "0680ade7-86af-4f05-9683-4b4015eeda6f": {
-          "id": "0680ade7-86af-4f05-9683-4b4015eeda6f",
-          "name": "Failer",
-          "title": "IDle Failer",
+        "3bcbae7f-a2e5-40e9-94fa-b61f250585e6": {
+          "id": "3bcbae7f-a2e5-40e9-94fa-b61f250585e6",
+          "name": "b3_action_chase_player",
+          "title": "Chase Player",
           "description": "",
           "properties": {},
           "display": {
-            "x": 48,
-            "y": 132
+            "x": 156,
+            "y": 372
           }
         }
       },
       "display": {
-        "camera_x": 838.5,
-        "camera_y": 485,
+        "camera_x": 621,
+        "camera_y": 276.5,
         "camera_z": 1,
-        "x": -156,
-        "y": -204
+        "x": 0,
+        "y": -12
+      }
+    },
+    {
+      "version": "1.0.0",
+      "scope": "tree",
+      "id": "be857b6f-037f-4826-835e-331a82feb77c",
+      "title": "WaitTest",
+      "description": "The root of this tree.  The title of this node sets the title of the tree.",
+      "root": "76e2aade-97bd-48a1-9015-dcbe6949c265",
+      "properties": {},
+      "nodes": {
+        "76e2aade-97bd-48a1-9015-dcbe6949c265": {
+          "id": "76e2aade-97bd-48a1-9015-dcbe6949c265",
+          "name": "Sequence",
+          "title": "Sequence",
+          "description": "The Sequence node ticks its children sequentially until one of them returns `FAILURE`, `RUNNING` or `ERROR`. If all children return the success state, the sequence also returns `SUCCESS`.",
+          "properties": {},
+          "display": {
+            "x": -48,
+            "y": -48
+          },
+          "children": [
+            "37d29989-4092-41fa-8d4e-dbf05b3f9c77",
+            "e9aa29c0-beb0-409a-97ac-607449db267e",
+            "5cbb4450-0c1a-46cb-b763-6ac011325899",
+            "420b889e-3c0f-49d6-8723-a9c2fff437f4"
+          ]
+        },
+        "420b889e-3c0f-49d6-8723-a9c2fff437f4": {
+          "id": "420b889e-3c0f-49d6-8723-a9c2fff437f4",
+          "name": "Succeeder",
+          "title": "Succeeder",
+          "description": "This action node returns `SUCCESS` always.",
+          "properties": {},
+          "display": {
+            "x": 264,
+            "y": 96
+          }
+        },
+        "37d29989-4092-41fa-8d4e-dbf05b3f9c77": {
+          "id": "37d29989-4092-41fa-8d4e-dbf05b3f9c77",
+          "name": "Wait",
+          "title": "Wait <milliseconds>ms",
+          "description": "Wait a few seconds.",
+          "properties": {
+            "milliseconds": 2
+          },
+          "display": {
+            "x": -240,
+            "y": 96
+          }
+        },
+        "e9aa29c0-beb0-409a-97ac-607449db267e": {
+          "id": "e9aa29c0-beb0-409a-97ac-607449db267e",
+          "name": "Wait",
+          "title": "Wait <milliseconds>ms",
+          "description": "Wait a few seconds.",
+          "properties": {
+            "milliseconds": 2
+          },
+          "display": {
+            "x": -84,
+            "y": 204
+          }
+        },
+        "5cbb4450-0c1a-46cb-b763-6ac011325899": {
+          "id": "5cbb4450-0c1a-46cb-b763-6ac011325899",
+          "name": "Wait",
+          "title": "Wait <milliseconds>ms",
+          "description": "Wait a few seconds.",
+          "properties": {
+            "milliseconds": 2
+          },
+          "display": {
+            "x": 108,
+            "y": 156
+          }
+        }
+      },
+      "display": {
+        "camera_x": 682,
+        "camera_y": 463.5,
+        "camera_z": 1,
+        "x": -48,
+        "y": -144
       }
     }
   ],
   "custom_nodes": [
     {
-      "version": "0.3.1",
+      "version": "1.0.0",
       "scope": "node",
-      "name": "test_action",
+      "name": "b3_action_chase_player",
       "category": "action",
-      "title": "Test Action",
-      "description": "testing",
-      "properties": {
-        "test_value": 1
-      }
+      "title": "Chase Player",
+      "description": null,
+      "properties": {}
+    },
+    {
+      "version": "1.0.0",
+      "scope": "node",
+      "name": "b3_action_roam_around",
+      "category": "action",
+      "title": "Roam Around",
+      "description": null,
+      "properties": {}
     }
   ]
 }

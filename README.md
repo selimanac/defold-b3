@@ -1,13 +1,17 @@
+# WIP
+
+Do not use it.
+
 ![defold-b3](/.github/b3.png?raw=true)
 
-This is a Behavior Tree Runtime library for the Defold Engine based on old [Behavior3](https://github.com/behavior3) framework.
+This is a Behavior Tree Runtime Library for the Defold Engine based on  [Behavior3](https://github.com/behavior3) framework.
 
 ## Installation
 
-You can use this library in your own project by adding this project as a [Defold library dependency](https://defold.com/manuals/libraries/#setting-up-library-dependencies).  
+You can use this library in your own project by adding this project and UUID as a [Defold library dependency](https://defold.com/manuals/libraries/#setting-up-library-dependencies).  
 Open your `game.project` file, select  `Project ` and add a  `Dependencies` field:
 
->https://github.com/selimanac/defold-b3/archive/refs/heads/master.zip   
+>https://github.com/selimanac/defold-b3/archive/master.zip   
 >https://github.com/selimanac/defold-uuid4/archive/master.zip
 
 ## Behavior Tree Editor
@@ -41,7 +45,8 @@ Initial release
 # API
 
 - This library uses [middleclass](https://github.com/kikito/middleclass) internally. If you are planning to create custom nodes, you need to be familiar with middleclass.
-- It is your responsibility to load JSON data. You may use  [Custom Resources](https://defold.com/manuals/project-settings/#custom-resources) for this purpose..
+- It is your responsibility to load JSON data. You may use  [Custom Resources](https://defold.com/manuals/project-settings/#custom-resources) for this purpose..  
+- Behaviortree instance works only with a single tree
 
 # Parser
 
@@ -196,6 +201,7 @@ Create and get a new Tick instance. You must set the `tick.agent` and `tick.blac
 ## tick.agent
 
 Tick agent blackboard. This is for **internal use**. You must set this variable.
+You can use this blackboard for passing data to class methods. But please be caution, this blackboard also used internally.
 
 
 **EXAMPLE**
@@ -263,6 +269,7 @@ Create new behavior tree instance using single tree.
 ## behaviortree_instance:set_tree(data)
 
 Set an other tree data table to behavior tree.
+**Caution**: Setting a different tree while Tick is running might cause a problem.
 
 **PARAMETERS**
 
